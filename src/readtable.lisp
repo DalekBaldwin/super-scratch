@@ -5,7 +5,8 @@
   (let ((*package*
          (if *read-suppress*
              *package*
-             (find-package (read stream t nil t)))))
+             (find-package
+              (intern (symbol-name (read stream t nil t)) :keyword)))))
     (read stream t nil t)))
 
 (defun ignore-form (stream char numarg)

@@ -3,5 +3,5 @@
 
 #!
 (progn
-  #@:some-package
+  #@some-package
   your code to evaluate in :some-package goes here)
