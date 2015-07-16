@@ -5,8 +5,11 @@
   (let ((*package*
          (if *read-suppress*
              *package*
-             (find-package
-              (intern (symbol-name (read stream t nil t)) :keyword)))))
+             (let ((package-name
+                    (intern (symbol-name (read stream t nil t)) :keyword)))
+               (or
+                (find-package package-name)
+                (error "No package named ~A." package-name))))))
     (read stream t nil t)))
 
 (defun ignore-form (stream char numarg)
