@@ -4,4 +4,4 @@
 #!
 (progn
   #@some-package
-  your code to evaluate in :some-package goes here)
+  (your code to evaluate in :some-package goes here))
